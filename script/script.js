@@ -3,7 +3,6 @@
 let time;
 let task;
 let userInfo = {};
-// let userTime;
 
 
 
@@ -13,16 +12,6 @@ const userAnswers = () => {
 
         time = prompt (`Укажите время в формате 'часы:минуты'`, `00:00`)
         console.log(`time`, time);
-
-        let userTime = `${time.slice(0,2)} : ${time.slice(2,4)}`;
-
-        if (time == null) {
-            userTime = "";
-        }
-
-        if ((time.slice(0,2) > 24) || (time.slice(2,4) > 60)) {
-            alert ('Неправильный формат времени');
-        } 
         
         if (!time) {
             alert ('Укажите данные')
@@ -36,7 +25,7 @@ const userAnswers = () => {
             alert ('Укажите задачу')
         }
 
-        userInfo[userTime] = task
+        userInfo[time] = task
         console.log ('userInfo', userInfo); 
 
     } while (time && task);
